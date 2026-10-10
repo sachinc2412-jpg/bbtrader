@@ -123,3 +123,6 @@ header{height:72px;position:sticky;top:0;z-index:20;background:#fffffff5;border-
    create a scroll container, so sticky sections retain native vertical scrolling. */
 html,body{max-width:100%;overflow-x:clip}
 .market-story{overflow-x:clip}
+
+/* Removed the snapshot heading and chart synchronization caption. */
+.hero-snapshot{grid-template-columns:repeat(3,minmax(0,1fr))}.native-foot{justify-content:flex-end}
