@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "scripts": {"check": "node --check public/app.js && node --check public/story-motion.js && node --check api/\"[route]\".js"}
+  "scripts": {
+    "check": "node --check public/app.js && node --check public/story-motion.js && node --check api/\"[route]\".js && node --check public/market-model.js && node --check worker/api.js",
+    "test": "node --test tests/market-fallback.test.mjs"
+  }
 }
