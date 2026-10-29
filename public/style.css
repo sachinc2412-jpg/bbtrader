@@ -126,3 +126,9 @@ html,body{max-width:100%;overflow-x:clip}
 
 /* Removed the snapshot heading and chart synchronization caption. */
 .hero-snapshot{grid-template-columns:repeat(3,minmax(0,1fr))}.native-foot{justify-content:flex-end}
+
+/* Persistent WhatsApp contact, with room for mobile device safe areas. */
+.whatsapp-contact{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 19px;border:1px solid #ffffff45;border-radius:999px;background:#128c4a;color:#fff;text-decoration:none;font-family:inherit;font-size:14px;font-weight:600;line-height:1.2;box-shadow:0 6px 24px #071b2c29;transition:transform .2s ease,background .2s ease}
+.whatsapp-contact svg{flex-shrink:0}.whatsapp-contact:hover{background:#087a3d;transform:translateY(-2px);color:#fff}.whatsapp-contact:focus-visible{outline:3px solid #071b2c;outline-offset:4px}
+@media(max-width:600px){.whatsapp-contact{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:54px;height:54px;padding:0}.whatsapp-contact span{display:none}}
+@media(prefers-reduced-motion:reduce){.whatsapp-contact{transition:none}.whatsapp-contact:hover{transform:none}}
