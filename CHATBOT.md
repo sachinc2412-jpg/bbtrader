@@ -1,14 +1,26 @@
-# BBTrader website assistant
+# BBTrader Tawk.to integration
 
-The public website now includes a lightweight, rule-based enquiry chatbot. It is not a generative AI or a live agent. No provider key, paid AI service or new backend is required.
+The user-provided Tawk.to widget replaces the local rule-based assistant. The existing floating WhatsApp button and prefilled service-enquiry message are preserved.
 
-- Account registration and login point to the existing bbtrader.live portal.
-- Market and chart answers use the website's current content.
-- Funding, pricing, eligibility and account-specific questions direct visitors to the team rather than inventing terms or accessing account data.
-- Support handoff opens WhatsApp at +91 70637 47653 with a predefined, topic-specific enquiry. Visitors review and send it themselves. Typed messages are never included in handoff URLs.
-- Conversations stay in page memory; no transcript storage, CRM submission or analytics were added. Restart clears the conversation; reloading also clears it.
-- The circular chat launcher sits above the existing WhatsApp button. The panel supports keyboard focus, Escape to close, mobile viewport sizing and reduced motion.
+- Property: `6aeaed73b78df63c3544ab14`
+- Widget: `1k6iqv3li`
+- Embed is loaded asynchronously before the end of `public/index.html`.
+- Official `Tawk_API.customStyle` placement puts the launcher above WhatsApp: desktop 24 px right / 92 px bottom, mobile 16 px right / 84 px bottom.
+- Conversation handling, agent availability, forms, retention, canned replies and any automated/AI answers are controlled in the Tawk.to account. The embed alone does not configure an automated knowledge base.
+- The previous local assistant markup, assets and tests have been removed to avoid duplicate launchers and replies.
+- No trading-account credentials or CRM records are passed to the widget by our integration. Tawk.to itself manages visitor/chat data according to its account configuration.
 
-Edit approved answers and keyword routing in `public/chat-knowledge.js`. UI behavior is in `public/chatbot.js`; styling is isolated in `public/chatbot.css`. The existing page, chart data, account links and WhatsApp hover interaction remain intact.
+## Suggested content to configure manually
 
-Validation: `npm run check` and `npm test`.
+Greeting: “Welcome to BBTrader — Broker Bhai Trader. How can we help you today?”
+
+1. How do I open a BBTrader account? — Start at https://bbtrader.live/register. Contact the team if you need help completing registration.
+2. How do I log in or get password help? — Sign in at https://bbtrader.live/login. Contact support if you cannot access your account. Never share your password or OTP in chat.
+3. Which markets can I explore? — The public website displays Indian benchmarks, forex pairs and crypto quotes/charts. Ask the team which products are available for your account and location.
+4. What is the minimum deposit and what fees apply? — Ask the team for the current minimum deposit, charges and account terms. Do not quote an amount until the business confirms it.
+5. How can I deposit or withdraw funds? — Use the account portal or contact support for available methods, processing times and request status. Do not collect payment details in chat.
+6. What documents are required for verification? — Ask the team for the current KYC requirements and the secure submission process. Do not request identity-document uploads through chat without a confirmed business process.
+7. Why is a chart unavailable or a price delayed? — Check the quote source and update time, then refresh the page. Some data may be delayed and historical data may be displayed during a feed interruption.
+8. How do I speak to the BBTrader team? — Contact WhatsApp +91 70637 47653: https://wa.me/917063747653.
+
+Suggested enquiry fields: name, topic/question, and optional email or phone for a reply. Configure business hours and an offline message using the team's real availability; do not claim 24/7 human support unless confirmed.
